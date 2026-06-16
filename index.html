@@ -3,113 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webek készítése mesterfokon | WT</title>
+    <title>WebTeach | Webes készítés mesterfokon</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- FELSŐ MENÜSÁV -->
-    <header>
-        <div class="logo-container" onclick="showMainPage()" style="cursor: pointer;">
-            <div class="logo">WT</div>
-            <div class="logo-text">Webek készítése mesterfokon</div>
+    <nav class="navbar">
+        <div class="nav-left" onclick="showMainPage()" style="cursor: pointer;">
+            <span class="logo-bracket">{</span>
+            <span class="logo-text">WebTeach</span>
+            <span class="logo-bracket">}</span>
         </div>
-        <nav>
-            <button class="nav-btn" id="nav-main" onclick="showMainPage()">Főoldal</button>
-            <button class="nav-btn" id="nav-html" onclick="changeTab('html')">HTML</button>
-            <button class="nav-btn" id="nav-css" onclick="changeTab('css')">CSS</button>
-            <button class="nav-btn" id="nav-js" onclick="changeTab('js')">JavaScript</button>
-            <button class="nav-btn video-btn">Videók <span class="badge">Hamarosan</span></button>
-        </nav>
-        <div class="auth-buttons">
-            <button class="btn-login">Bejelentkezés</button>
-            <button class="btn-register">Regisztráció</button>
+        <div class="nav-center">
+            <button id="nav-main" class="nav-btn active" onclick="showMainPage()">Főoldal</button>
+            <button id="nav-html" class="nav-btn" onclick="changeTab('html')">HTML</button>
+            <button id="nav-css" class="nav-btn" onclick="changeTab('css')">CSS</button>
+            <button id="nav-js" class="nav-btn" onclick="changeTab('js')">JavaScript</button>
         </div>
-    </header>
+        <div class="nav-right">
+            <button class="auth-btn login" onclick="openModal('login-modal')">Login</button>
+            <button class="auth-btn register" onclick="openModal('register-modal')">Regiszterek</button>
+        </div>
+    </nav>
 
-    <!-- 1. DINAMIKUS FŐOLDAL -->
-    <div id="main-page" class="page-section">
-        <section class="hero">
-            <h1>Tanulj meg weboldalakat készíteni az alapoktól a mesterfokig!</h1>
-            <p>Nincs dükbölés, nincs száraz tankönyv szag. Csak tiszta gyakorlat, érthető nyelven.</p>
-        </section>
-
-        <section class="course-cards-container">
-            <h2>Milyen technológiákat tanulhatsz meg nálunk?</h2>
-            <div class="cards-grid">
-                <div class="card card-html" onclick="changeTab('html')">
-                    <div class="card-icon">&lt;/&gt;</div>
-                    <h3>HTML5 Alapozó</h3>
-                    <p>Megtanulod felépíteni egy weboldal csontvázát. Címsorok, gombok, képek és szerkezetek helyes használata.</p>
-                    <span class="card-link">Irány a leckék →</span>
-                </div>
-                <div class="card card-css" onclick="changeTab('css')">
-                    <div class="card-icon">#</div>
-                    <h3>CSS3 Dizájn</h3>
-                    <p>Itt adjuk rá a ruhát a csontvázra. Színek, hátterek, modern elrendezések, animációk és a sötét mód titkai.</p>
-                    <span class="card-link">Irány a leckék →</span>
-                </div>
-                <div class="card card-js" onclick="changeTab('js')">
-                    <div class="card-icon">{ }</div>
-                    <h3>JavaScript Programozás</h3>
-                    <p>A weboldalad agya. Kattintások kezelése, logikai műveletek, és interaktív funkciók építése élőben.</p>
-                    <span class="card-link">Irány a leckék →</span>
-                </div>
+    <div id="main-page" class="container">
+        <div class="hero-section">
+            <h1>Webes készítés mesterfokon | WT</h1>
+            <p class="hero-subtitle">Ne csak a felszínt kapargasd. Tanuld meg a professzionális HTML5, CSS és JavaScript fejlesztést valódi gyakorlati példákon keresztül.</p>
+            <div class="hero-buttons">
+                <button class="cta-btn" onclick="changeTab('html')">Kezdés HTML-lel</button>
+                <a href="https://discord.gg/A_TE_SOP_LEJÁRHATATLAN_MEGHÍVÓD" target="_blank" class="dc-btn">Csatlakozz a Discordhoz</a>
             </div>
-        </section>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="news-section">
+            <h2>📢 Legutóbbi Bejelentések</h2>
+            <div class="news-card">
+                <span class="news-date">2026. 06. 16.</span>
+                <h3>Elindult a hivatalos Discord szerverünk!</h3>
+                <p>Mostantól zárt fejlesztői közösségben kérhetsz segítséget, oszthetod meg a projektjeidet, és kapsz azonnali visszajelzést. Csatlakozz a fenti gombbal!</p>
+            </div>
+            <div class="news-card">
+                <span class="news-date">2026. 06. 15.</span>
+                <h3>Haladó tananyagok élesítve</h3>
+                <p>Frissítettük az oktatási rendszert. Az alapok mellett most már a mélyebb architektúrát, a CSS Flexbox elrendezést és a professzionális JavaScript eseménykezelőket is elsajátíthatod.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- 2. TANULÓ FELÜLET -->
-    <div id="learning-page" class="page-section main-container" style="display: none;">
+    <div id="learning-page" class="learning-container" style="display: none;">
+        <aside id="lecture-menu" class="sidebar">
+            </aside>
         
-        <!-- BAL OLDALI SÁV: LECKÉK -->
-        <aside class="sidebar-left">
-            <h3>TARTALOMJEGYZÉK</h3>
-            <div id="lecture-menu"></div>
-        </aside>
-
-        <!-- KÖZÉPSŐ SÁV: OKTATÓANYAG ÉS KÓDGYAKORLÓ -->
-        <main class="content-center">
-            <article id="lecture-text">
-                <!-- Ide jön a részletes, laza leírás -->
-            </article>
-
-            <!-- BEÉPÍTETT KÓDGYAKORLÓ -->
-            <div class="code-sandbox">
-                <div class="sandbox-header">
-                    <h3>Próbáld ki élőben! 👇</h3>
-                    <p>Módosítsd a kódot és nézd meg, mi történik az Eredmény dobozban.</p>
+        <main class="content-area">
+            <div id="lecture-text" class="lecture-markdown">
                 </div>
-                <textarea id="code-input" placeholder="Írd ide a kódodat..."></textarea>
-                <button onclick="runCode()" class="run-btn">Kód futtatása ⚡</button>
-                <div class="preview-title">Eredmény:</div>
-                <iframe id="code-output"></iframe>
+            
+            <div class="workspace">
+                <div class="code-editor">
+                    <div class="panel-header">Saját Kód Szerkesztő</div>
+                    <textarea id="code-input" spellcheck="false" oninput="runCode()"></textarea>
+                </div>
+                <div class="code-preview">
+                    <div class="panel-header">Élő Eredmény Kijelző</div>
+                    <iframe id="code-output"></iframe>
+                </div>
             </div>
         </main>
-
-        <!-- JOBB OLDALI SÁV: AKTUÁLIS HIRDETÉSI ZÓNA -->
-        <aside class="sidebar-right">
-            <div class="ad-container">
-                
-                <!-- A TE SAJÁT MONETAG HIRDETÉSI KÓDOD -->
-                <script>(function(s){s.dataset.zone='11158596',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-
-            </div>
-        </aside>
-
     </div>
 
-    <!-- ALSÓ SÁV (FOOTER) -->
-    <footer>
-        <div class="footer-blog">
-            <h4>Friss Hírek & Tech Blog tőlem</h4>
-            <div class="blog-box">
-                <p><strong>[EZT TE ÍROD MAJD MEG]</strong></p>
-                <p class="footer-note">Tipp: Itt oszthatsz meg híreket arról, hogy épp milyen új leckét fejlesztel az oldalra.</p>
-            </div>
+    <div id="register-modal" class="custom-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('register-modal')">&times;</span>
+            <h2>Fiók Létrehozása</h2>
+            <p>Csatlakozz a WebTeach platformhoz.</p>
+            <form onsubmit="alert('Sikeres regisztráció! 🎉'); closeModal('register-modal'); return false;">
+                <input type="text" placeholder="Felhasználónév" required>
+                <input type="email" placeholder="E-mail cím" required>
+                <input type="password" placeholder="Jelszó" required>
+                <button type="submit" class="modal-submit-btn">Regisztráció</button>
+            </form>
         </div>
-        <p class="copyright">&copy; 2026 WT - Web Teach. Minden jog fenntartva.</p>
-    </footer>
+    </div>
+
+    <div id="login-modal" class="custom-modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
+            <h2>Bejelentkezés</h2>
+            <p>Lépj be a fejlesztői fiókodba.</p>
+            <form onsubmit="alert('Sikeres bejelentkezés! ⚡'); closeModal('login-modal'); return false;">
+                <input type="text" placeholder="Felhasználónév vagy Email" required>
+                <input type="password" placeholder="Jelszó" required>
+                <button type="submit" class="modal-submit-btn">Belépés</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
