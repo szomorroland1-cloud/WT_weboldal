@@ -3,100 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebTeach | Webes készítés mesterfokon</title>
+    <title>WT Politika | Független Hírportál és Felmérés</title>
     
+    <!-- MONETAG HIRDETÉSI KÓD -->
     <script src="https://5gvci.com/act/files/tag.min.js?z=11158750" data-cfasync="false" async></script>
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- FELSŐ NAVIGÁCIÓS MENÜ -->
     <nav class="navbar">
         <div class="nav-left" onclick="showMainPage()" style="cursor: pointer;">
-            <span class="logo-bracket">{</span>
-            <span class="logo-text">WebTeach</span>
-            <span class="logo-bracket">}</span>
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">WT Politika</span>
+            <span class="logo-bracket">]</span>
         </div>
         <div class="nav-center">
-            <button id="nav-main" class="nav-btn active" onclick="showMainPage()">Főoldal</button>
-            <button id="nav-html" class="nav-btn" onclick="changeTab('html')">HTML & CSS</button>
-            <button id="nav-plugins" class="nav-btn" onclick="changeTab('plugins')">MC Plugins</button>
-            <button id="nav-mods" class="nav-btn" onclick="changeTab('mods')">MC Mods</button>
+            <button id="nav-main" class="nav-btn active" onclick="showMainPage()">Főoldal & Napi Hírek</button>
+            <button id="nav-partok" class="nav-btn" onclick="openPartNews()">Pártok Hírei & Info</button>
         </div>
         <div class="nav-right">
-            <button class="auth-btn login" onclick="openModal('login-modal')">Login</button>
-            <button class="auth-btn register" onclick="openModal('register-modal')">Regiszterek</button>
+            <a href="https://discord.gg/AHx7F9ytWe" target="_blank" class="dc-btn" style="padding: 8px 15px; font-size: 14px;">Discord Politikai Chat</a>
         </div>
     </nav>
 
+    <!-- FŐOLDAL: NAPI 5 HÍR ÉS A TOP 10 PÁRT SZAVAZÁS -->
     <div id="main-page" class="container">
-        <div class="hero-section">
-            <h1>Webes készítés és Minecraft játékmester képzés | WT</h1>
-            <p class="hero-subtitle">Tanuld meg a professzionális HTML5 & CSS fejlesztést, vagy böngéssz a legjobb Minecraft pluginok és modok között, közvetlen eléréssel!</p>
-            <div class="hero-buttons">
-                <button class="cta-btn" onclick="changeTab('html')">Kezdés HTML-lel</button>
-                <a href="https://discord.gg/AHx7F9ytWe" target="_blank" class="dc-btn">Csatlakozz a Discordhoz</a>
+        
+        <div class="politics-grid" style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px;">
+            
+            <!-- BAL OLDAL: NAPI 5 RÖVID HÍR -->
+            <div class="news-feed" style="flex: 1; min-width: 300px;">
+                <h2 style="color: #45f3ff; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">📌 Napi Friss Hírek</h2>
+                <div id="daily-news-container">
+                    <!-- Ide a JS pakolja be az 5 hírt -->
+                </div>
             </div>
-        </div>
 
-        <hr class="section-divider">
-
-        <div class="news-section">
-            <h2>📢 Legutóbbi Bejelentések</h2>
-            <div class="news-card">
-                <span class="news-date">2026. 06. 16.</span>
-                <h3>Minecraft Adatbázis Élesítve! 🔥</h3>
-                <p>Feltöltöttük a rendszert a beküldött toplistás pluginokkal és modcsomagokkal. Mostantól a Simple Voice Chat, LuckPerms, EssentialsX, és a legjobb FPS optimalizálók is elérhetőek leírással!</p>
+            <!-- JOBB OLDAL: TOP 10 PÁRT INTERAKTÍV SZAVAZÁS -->
+            <div class="poll-section" style="flex: 1; min-width: 350px; background: #151a22; padding: 25px; border-radius: 12px; border: 1px solid #333; height: fit-content;">
+                <h2 style="color: #ff9900; margin-top: 0;">📊 Országos Népszerűségi Felmérés</h2>
+                <p style="color: #8f9aa7; font-size: 14px; margin-bottom: 20px;">Add le a voksodat! Szerinted melyik párt nyerné a választásokat most vasárnap? (A szavazás anonim)</p>
+                
+                <div id="poll-container">
+                    <!-- Ide jön a 10 párt a szavazósávokkal -->
+                </div>
+                <p style="font-size: 11px; color: #555; text-align: center; margin-top: 15px;">A szavazatokat a böngésződ megjegyzi.</p>
             </div>
+
         </div>
     </div>
 
+    <!-- PÁRTOK SZERINTI HÍREK ÉS CIKKEK INTERFÉSZ -->
     <div id="learning-page" class="learning-container" style="display: none;">
         <aside id="lecture-menu" class="sidebar">
-            </aside>
+            <!-- Ide jön a 10 Párt listája mint menü -->
+        </aside>
         
-        <main class="content-area">
-            <div id="lecture-text" class="lecture-markdown">
-                </div>
-            
-            <div id="web-workspace" class="workspace">
-                <div class="code-editor">
-                    <div class="panel-header">Saját Kód Szerkesztő</div>
-                    <textarea id="code-input" spellcheck="false" oninput="runCode()"></textarea>
-                </div>
-                <div class="code-preview">
-                    <div class="panel-header">Élő Eredmény Kijelző</div>
-                    <iframe id="code-output"></iframe>
-                </div>
+        <main class="content-area" style="width: 100%;">
+            <div id="lecture-text" class="lecture-markdown" style="max-width: 800px; margin: 0 auto; padding: 20px;">
+                <!-- Ide töltődnek be a pártokról szóló egyedi cikkek -->
             </div>
         </main>
-    </div>
-
-    <div id="register-modal" class="custom-modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('register-modal')">&times;</span>
-            <h2>Fiók Létrehozása</h2>
-            <p>Csatlakozz a WebTeach platformhoz.</p>
-            <form onsubmit="alert('Sikeres regisztráció! 🎉'); closeModal('register-modal'); return false;">
-                <input type="text" placeholder="Felhasználónév" required>
-                <input type="email" placeholder="E-mail cím" required>
-                <input type="password" placeholder="Jelszó" required>
-                <button type="submit" class="modal-submit-btn">Regisztráció</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="login-modal" class="custom-modal" style="display: none;">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('login-modal')">&times;</span>
-            <h2>Bejelentkezés</h2>
-            <p>Lépj be a fejlesztői fiókodba.</p>
-            <form onsubmit="alert('Sikeres bejelentkezés! ⚡'); closeModal('login-modal'); return false;">
-                <input type="text" placeholder="Felhasználónév vagy Email" required>
-                <input type="password" placeholder="Jelszó" required>
-                <button type="submit" class="modal-submit-btn">Belépés</button>
-            </form>
-        </div>
     </div>
 
     <script src="script.js"></script>
