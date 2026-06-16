@@ -1,72 +1,114 @@
-// PROFI, MÉLYEBB OKTATÓANYAG ADATBÁZIS
+// A TELJESEN ÚJRAKÓDOLT OKTATÓANYAG ADATBÁZIS (20 WEB LECKE + MINECRAFT)
 const DATA = {
     html: [
-        { 
-            id: 1, 
-            level: "1. SZINT: ARCHITEKTÚRA", 
-            title: "1. A modern HTML5 struktúra", 
-            text: "<h1>Professzionális HTML5 Felépítés</h1><p>A valóságban egy igazi weboldalnak szigorú, tiszta szerkezete van. A legfontosabb strukturális elemek a <strong>&lt;header&gt;</strong> (fejléc), <strong>&lt;main&gt;</strong> (főtartalom), és a <strong>&lt;footer&gt;</strong> (lábléc).</p><p>Ezek az elemek segítenek a Google keresőrobotjainak megérteni az oldalad felépítését.</p>", 
-            defaultCode: "<header>\n  <h1>WebTeach Prémium Kurzus</h1>\n</header>\n<main>\n  <p>Ez itt a fő tartalom, ami a cikkeket tartalmazza.</p>\n</main>\n<footer>\n  <p>© 2026 WebTeach - Minden jog fenntartva.</p>\n</footer>" 
-        },
-        { 
-            id: 2, 
-            level: "1. SZINT: ARCHITEKTÚRA", 
-            title: "2. Inputok és Űrlapok (Forms)", 
-            text: "<h1>Adatgyűjtés és Beküldés</h1><p>Ha azt akarod, hogy a felhasználók regisztráljanak, adatokat kell gyűjtened tőlük. A <strong>&lt;form&gt;</strong> elemen belül az <strong>&lt;input&gt;</strong> parancs határozza meg a beviteli mező típusát (text, email, password).</p>", 
-            defaultCode: "<form action='#' onsubmit='alert(\"Adatok elküldve!\"); return false;'>\n  <label>Felhasználónév:</label><br>\n  <input type='text' placeholder='Add meg a neved...' required><br><br>\n  <label>Jelszó:</label><br>\n  <input type='password' required><br><br>\n  <button type='submit'>Bejelentkezés</button>\n</form>" 
-        },
-        { 
-            id: 3, 
-            level: "2. SZINT: HALADÓ ÖSSZEKÖTÉS", 
-            title: "3. Külső CSS és JS beágyazása", 
-            text: "<h1>Külső erőforrások linkelése</h1><p>A profik külön állományokat hoznak létre, és a HTML-ben linkelik be őket. Így külön életet él a dizájn, a HTML és a logika:</p><ul><li><strong>CSS linkelés (a head-ben):</strong> &lt;link rel='stylesheet' href='style.css'&gt;</li><li><strong>JS linkelés (a body alján):</strong> &lt;script src='script.js'&gt;&lt;/script&gt;</li></ul>", 
-            defaultCode: "\n<head>\n  <link rel='stylesheet' href='style.css'>\n</head>\n<body>\n  <h2>A dizájn és a logika külső fájlokból töltődik be!</h2>\n  <script src='script.js'></script>\n</body>" 
-        }
+        // 1-5. LECKE: AZ ALAPOK ÉS A STRUKTÚRA
+        { id: 1, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "1. Mi az a HTML5?", text: "<h1>Mi az a HTML5?</h1><p>A HTML a weboldalak csontváza. Minden, amit a neten látsz, HTML tagek közé van zárva.</p>", defaultCode: "<h1>Szia! Ez az első HTML kódom!</h1>" },
+        { id: 2, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "2. Bekezdések és Szövegek", text: "<h1>Bekezdések kezelése</h1><p>A sima szövegeket mindig a <code>&lt;p&gt;</code> tag-ek közé írjuk.</p>", defaultCode: "<p>Ez egy sima szöveges bekezdés.</p>" },
+        { id: 3, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "3. Címsorok hierarchiája", text: "<h1>Címsorok (h1-h6)</h1><p>A keresőoptimalizálás miatt fontos, hogy a főcím <code>&lt;h1&gt;</code>, az alcímek <code>&lt;h2&gt;</code> legyenek.</p>", defaultCode: "<h1>Főcím</h1>\n<h2>Alcím</h2>" },
+        { id: 4, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "4. Kattintható Linkek", text: "<h1>Hivatkozások (Links)</h1><p>A linkeket az <code>&lt;a href='URL'&gt;</code> tag segítségével hozzuk létre.</p>", defaultCode: "<a href='https://google.com' target='_blank'>Irány a Google!</a>" },
+        { id: 5, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "5. Képek beágyazása", text: "<h1>Képek elhelyezése</h1><p>Az <code>&lt;img&gt;</code> tagnek nincs záró párja, csak egy <code>src</code> attribútuma.</p>", defaultCode: "<img src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200' alt='Kód'>" },
+
+        // 6-10. LECKE: LISTÁK, KÁRTYÁK ÉS DOBOZOK
+        { id: 6, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "6. Listák létrehozása", text: "<h1>Rendezett és rendezetlen listák</h1><p>Használj <code>&lt;ul&gt;</code>-t a pontozott, és <code>&lt;ol&gt;</code>-t a számozott listákhoz.</p>", defaultCode: "<ul>\n  <li>Első pont</li>\n  <li>Második pont</li>\n</ul>" },
+        { id: 7, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "7. A DIV dobozrendszer", text: "<h1>A láthatatlan doboz (div)</h1><p>A <code>&lt;div&gt;</code> tag a weboldalak legfontosabb eleme, ezzel csoportosítjuk a tartalmat, hogy később CSS-sel formázhassuk.</p>", defaultCode: "<div>\n  <h3>Dizájn csoport</h3>\n  <p>Tartalom a dobozon belül.</p>\n</div>" },
+        { id: 8, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "8. HTML5 Szemantika", text: "<h1>Modern HTML5 elemek</h1><p>Használj <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> és <code>&lt;footer&gt;</code> tageket a tiszta kódért.</p>", defaultCode: "<main>\n  <article>Cikk tartalom</article>\n</main>" },
+        { id: 9, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "9. Input mezők", text: "<h1>Adatbeviteli mezők</h1><p>Az <code>&lt;input type='text'&gt;</code> segítségével szöveget kérhetsz be a látogatótól.</p>", defaultCode: "<input type='text' placeholder='Írd ide a neved...'>" },
+        { id: 10, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "10. Űrlapok (Forms)", text: "<h1>Űrlapok összeállítása</h1><p>A <code>&lt;form&gt;</code> fogja össze az inputokat és a küldés gombot.</p>", defaultCode: "<form>\n  <input type='email' placeholder='Email...'>\n  <button type='submit'>Küldés</button>\n</form>" },
+
+        // 11-15. LECKE: CSS ALAPOK ÉS OSZTÁLYOK
+        { id: 11, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "11. Mi az a CSS3?", text: "<h1>Bevezetés a CSS világába</h1><p>A CSS felelős a weboldal teljes kinézetéért. Megadhatod a színeket, méreteket és elrendezéseket.</p>", defaultCode: "<p style='color: cyan;'>Ez egy közvetlenül színezett szöveg.</p>" },
+        { id: 12, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "12. CSS Osztályok (Classes)", text: "<h1>Tiszta CSS osztályokkal</h1><p>A HTML-ben megadsz egy <code>class='nev'</code>-et, a CSS-ben pedig egy ponttal (<code>.nev</code>) hivatkozol rá.</p>", defaultCode: "<style>\n  .piros-szoveg { color: red; font-weight: bold; }\n</style>\n<p class='piros-szoveg'>Ez már osztály alapú stílus!</p>" },
+        { id: 13, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "13. Betűtípusok és Méretek", text: "<h1>Tipográfia</h1><p>A <code>font-size</code> és a <code>font-family</code> segítségével teljesen egyedi szövegképet alkothatsz.</p>", defaultCode: "<p style='font-size: 24px; font-family: monospace;'>Monospace nagy betűk.</p>" },
+        { id: 14, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "14. Szegélyek (Borders)", text: "<h1>Keretek és szegélyek</h1><p>A <code>border</code> tulajdonsággal vastagságot, stílust és színt adhatsz a dobozaid szélének.</p>", defaultCode: "<div style='border: 2px solid #45f3ff; padding: 10px;'>Keretes doboz</div>" },
+        { id: 15, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "15. Sarkok lekerekítése", text: "<h1>Lekerekített modern formák</h1><p>A modern webes dizájn alapja a <code>border-radius</code>, amivel eltüntetheted a hegyes sarkokat.</p>", defaultCode: "<button style='border-radius: 8px; padding: 10px 20px;'>Kerekített Gomb</button>" },
+
+        // 16-20. LECKE: PRÉMIUM ELRENDEZÉSEK ÉS HÁTTEREK
+        { id: 16, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "16. Belső térköz (Padding)", text: "<h1>Padding használata</h1><p>A padding a dobozon belüli üres teret növeli meg, hogy a szöveg ne ragadjon rá a szélekre.</p>", defaultCode: "<div style='background: #222; padding: 30px;'>Kényelmes, szellős doboz.</div>" },
+        { id: 17, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "17. Külső margó (Margin)", text: "<h1>Margin használata</h1><p>A margin a dobozon kívüli teret tolja el, ezzel tudsz két külön elemet eltávolítani egymástól.</p>", defaultCode: "<div style='margin-bottom: 50px; background: red;'>Felső</div>\n<div style='background: blue;'>Alsó</div>" },
+        { id: 18, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "18. Színátmenetes hátterek", text: "<h1>Linear-gradient háttérbeállítás</h1><p>A profi sötét oldalak alapja a CSS <code>linear-gradient</code>, amivel gyönyörű színátmeneteket készíthetsz.</p>", defaultCode: "<div style='background: linear-gradient(135deg, #111, #0072ff); padding: 50px; color: white;'>Átmenetes háttér</div>" },
+        { id: 19, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "19. CSS Flexbox alapok", text: "<h1> display: flex;</h1><p>A flexbox segítségével az elemeket azonnal és tökéletesen egymás mellé tudod rendezni szoftveres szinten.</p>", defaultCode: "<div style='display: flex; gap: 20px;'>\n  <div style='background:gray; padding:10px;'>1</div>\n  <div style='background:gray; padding:10px;'>2</div>\n</div>" },
+        { id: 20, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "20. Teljes reszponzív kártya", text: "<h1>A 20. Vizsgafeladat</h1><p>Gratulálunk! Elérted az utolsó leckét. Itt egy komplett, modern és profi termékkártyát láthatsz, ami az eddig tanult összes HTML és CSS elemet tartalmazza.</p>", defaultCode: "<div style='background: #151a22; border: 1px solid #45f3ff; padding: 25px; border-radius: 12px; width: 250px; text-align: center; color: white;'>\n  <h3 style='margin: 0 0 10px 0;'>WebTeach Pro</h3>\n  <p style='font-size: 14px; color: #8f9aa7;'>Sikeresen elvégezted a 20 leckés HTML & CSS fejlesztő kurzust!</p>\n  <button style='background: #45f3ff; border: none; padding: 10px 20px; font-weight: bold; border-radius: 6px; cursor: pointer;'>Tanúsítvány</button>\n</div>" }
     ],
     css: [
+        // 5 DB PROFESSZIONÁLIS MINECRAFT PLUGIN CSATORNA
         { 
             id: 1, 
-            level: "1. SZINT: PROFI FORMÁZÁS", 
-            title: "1. A CSS Szelektorok használata", 
-            text: "<h1>Normális CSS használat osztályokkal</h1><p>A profi fejlesztésben **osztályokat (class)** és **azonosítókat (id)** használunk az elemek formázására. Az osztályokat a CSS-ben ponttal (<code>.osztalynev</code>) jelöljük.</p>", 
-            defaultCode: "<style>\n  .profi-kartya {\n    background: #151a22;\n    color: #45f3ff;\n    padding: 25px;\n    border-left: 5px solid #0072ff;\n  }\n</style>\n\n<div class='profi-kartya'>\n  <h3>Ez egy osztály alapú CSS formázás!</h3>\n  <p>Tiszta, modern és elkülönül a HTML-től.</p>\n</div>" 
+            level: "🔥 MINECRAFT PLUGINOK", 
+            title: "1. PLUGIN: Ide Írd a Plugin Nevét", 
+            text: "<h1>Plugin Név Helye</h1><p>Ide írhatod le részletesen, hogy mit tud ez a profi plugin, hogyan kell beállítani a szerveren, és miért hasznos a játékosoknak.</p><p>A lenti gombra kattintva a diákjaid azonnal le tudják tölteni vagy meg tudják nézni a hivatalos oldalt.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése / Letöltése 🚀</a>", 
+            defaultCode: "\n# Config.yml minta\nsettings:\n  enabled: true\n  prefix: '&6[WebTeachPlugin] '" 
         },
         { 
             id: 2, 
-            level: "1. SZINT: PROFI FORMÁZÁS", 
-            title: "2. Háttérbeállítások mesterfokon", 
-            text: "<h1>Hátterek: Színátmenetek és Képek</h1><p>A modern dizájn alapja a sötét tónusú **linear-gradient** (színátmenet). Valamint a háttérképek precíz igazítása a <code>background-size: cover;</code> paranccsal, ami torzításmentesen illeszti a képeket.</p>", 
-            defaultCode: "<style>\n  .premium-bg {\n    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);\n    color: white;\n    padding: 40px;\n    border-radius: 8px;\n    text-align: center;\n  }\n</style>\n\n<div class='premium-bg'>\n  <h2>Komoly, színátmenetes háttérbeállítás</h2>\n  <p>Ez adja a prémium szoftveres érzetet.</p>\n</div>" 
+            level: "🔥 MINECRAFT PLUGINOK", 
+            title: "2. PLUGIN: Második Plugin", 
+            text: "<h1>Második Plugin Leírása</h1><p>Írd ide a második plugin bemutatását.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
+            defaultCode: "# Második plugin beállítások" 
         },
         { 
             id: 3, 
-            level: "2. SZINT: MODERN ELRENDEZÉSEK", 
-            title: "3. CSS Flexbox elrendezés", 
-            text: "<h1>Flexbox elrendezés</h1><p>A <code>display: flex;</code> paranccsal másodpercek alatt létrehozhatsz tökéletesen igazított menüket vagy boxokat egymás mellé.</p>", 
-            defaultCode: "<style>\n  .flex-container {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    background: #111;\n    padding: 15px;\n  }\n  .box { background: #0072ff; padding: 10px 20px; color: white; }\n</style>\n\n<div class='flex-container'>\n  <div class='box'>Bal doboz</div>\n  <div class='box'>Középső doboz</div>\n  <div class='box'>Jobb doboz</div>\n</div>" 
+            level: "🔥 MINECRAFT PLUGINOK", 
+            title: "3. PLUGIN: Harmadik Plugin", 
+            text: "<h1>Harmadik Plugin Leírása</h1><p>Ide jön a harmadik plugin ismertetője.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
+            defaultCode: "# Harmadik plugin beállítások" 
+        },
+        { 
+            id: 4, 
+            level: "🔥 MINECRAFT PLUGINOK", 
+            title: "4. PLUGIN: Negyedik Plugin", 
+            text: "<h1>Negyedik Plugin Leírása</h1><p>Ide jön a negyedik plugin leírása.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
+            defaultCode: "# Negyedik plugin beállítások" 
+        },
+        { 
+            id: 5, 
+            level: "🔥 MINECRAFT PLUGINOK", 
+            title: "5. PLUGIN: Ötödik Plugin", 
+            text: "<h1>Ötödik Plugin Leírása</h1><p>Ide jön az ötödik profi szerver plugin leírása.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
+            defaultCode: "# Ötödik plugin beállítások" 
         }
     ],
     js: [
+        // 5 DB PROFESSZIONÁLIS MINECRAFT MOD CSATORNA
         { 
             id: 1, 
-            level: "1. SZINT: VALÓDI LOGIKA", 
-            title: "1. Változók és Adatok", 
-            text: "<h1>Adatok tárolása JavaScriptben</h1><p>A JavaScriptben értékeket tárolunk változókban (<strong>let</strong> és <strong>const</strong>). A kód képes matematikai műveletek elvégzésére és az eredmény élő kiírására.</p>", 
-            defaultCode: "<h3 id='ar-kijelzo'>Számítás folyamatban...</h3>\n\n<script>\n  const termekAr = 5000;\n  const afa = 1.27;\n  let vegosszeg = termekAr * afa;\n\n  document.getElementById('ar-kijelzo').innerHTML = \n    'Bruttó fizetendő összeg: ' + Math.round(vegosszeg) + ' Ft';\n</script>" 
+            level: "🛠️ MINECRAFT MODOK", 
+            title: "1. MOD: Ide Írd a Mod Nevét", 
+            text: "<h1>Mod Név Helye</h1><p>Ide írhatod le, hogy ez a Forge / Fabric mod milyen új blokkokat, textúrákat vagy mechanikákat ad hozzá a játékhoz.</p><p>A diákok imádni fogják a közvetlen linket az elérhetőségéhez!</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése / Letöltése 🛠️</a>", 
+            defaultCode: "/* Ide akár Java kódrészletet vagy telepítési útmutatót is írhatsz */\nForgeMod.register();" 
         },
         { 
             id: 2, 
-            level: "1. SZINT: VALÓDI LOGIKA", 
-            title: "2. Eseménykezelők (EventListeners)", 
-            text: "<h1>addEventListener – A profi kattintáskezelés</h1><p>A modern JavaScriptben eseményfigyelőket (<strong>EventListeners</strong>) használunk. Így a HTML-be nem kell kódot írni, a script magától észleli a kattintást.</p>", 
-            defaultCode: "<button id='profi-gomb' style='padding: 12px 24px; cursor:pointer;'>Kattints rám!</button>\n\n<script>\n  const gomb = document.getElementById('profi-gomb');\n  \n  gomb.addEventListener('click', function() {\n    gomb.style.backgroundColor = '#45f3ff';\n    gomb.style.color = '#000';\n    gomb.innerHTML = 'Sikeres interakció! ⚡';\n  });\n</script>" 
+            level: "🛠️ MINECRAFT MODOK", 
+            title: "2. MOD: Második Mod", 
+            text: "<h1>Második Mod Leírása</h1><p>Írd ide a második nagy Minecraft mod bemutatását.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
+            defaultCode: "// Második mod info" 
+        },
+        { 
+            id: 3, 
+            level: "🛠️ MINECRAFT MODOK", 
+            title: "3. MOD: Harmadik Mod", 
+            text: "<h1>Harmadik Mod Leírása</h1><p>Ide jön a harmadik mod részletes bemutatása.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
+            defaultCode: "// Harmadik mod info" 
+        },
+        { 
+            id: 4, 
+            level: "🛠️ MINECRAFT MODOK", 
+            title: "4. MOD: Negyedik Mod", 
+            text: "<h1>Negyedik Mod Leírása</h1><p>Ide jön a negyedik izgalmas mod ismertetője.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
+            defaultCode: "// Negyedik mod info" 
+        },
+        { 
+            id: 5, 
+            level: "🛠️ MINECRAFT MODOK", 
+            title: "5. MOD: Ötödik Mod", 
+            text: "<h1>Ötödik Mod Leírása</h1><p>Ide jön az ötödik modifikáció leírása és külső hivatkozása.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
+            defaultCode: "// Ötödik mod info" 
         }
     ]
 };
 
 let currentTab = 'html';
 
-// NAVIGÁCIÓ KEZELÉSE
 function showMainPage() {
     document.getElementById('main-page').style.display = 'block';
     document.getElementById('learning-page').style.display = 'none';
@@ -79,12 +121,17 @@ function changeTab(tabName) {
     document.getElementById('main-page').style.display = 'none';
     document.getElementById('learning-page').style.display = 'flex';
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Átnevezzük a gombokat a felületen a háttérben, hogy illeszkedjenek az új menühöz
+    document.getElementById('nav-html').innerText = "HTML & CSS Kurzus";
+    document.getElementById('nav-css').innerText = "MC Plugins";
+    document.getElementById('nav-js').innerText = "MC Mods";
+    
     document.getElementById(`nav-${tabName}`).classList.add('active');
     renderMenu();
     loadLecture(1);
 }
 
-// MENÜ ÉS LECKÉK RENDERELESE
 function renderMenu() {
     const menuContainer = document.getElementById('lecture-menu');
     menuContainer.innerHTML = '';
@@ -131,7 +178,6 @@ function runCode() {
     output.close();
 }
 
-// FELUGRÓ ABLAKOK (MODALOK) FUNKCIÓI
 function openModal(modalId) {
     document.getElementById(modalId).style.display = 'flex';
 }
@@ -140,7 +186,6 @@ function closeModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
 }
 
-// Kattintás ablakon kívül bezárja a modalt
 window.onclick = function(event) {
     const loginModal = document.getElementById('login-modal');
     const regModal = document.getElementById('register-modal');
@@ -149,5 +194,9 @@ window.onclick = function(event) {
 }
 
 window.onload = () => {
+    // Kezdésnél átírjuk a menü gombjait az új nevekre
+    document.getElementById('nav-html').innerText = "HTML & CSS Kurzus";
+    document.getElementById('nav-css').innerText = "MC Plugins";
+    document.getElementById('nav-js').innerText = "MC Mods";
     showMainPage();
 };
