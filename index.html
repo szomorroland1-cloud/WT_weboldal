@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webek készítése mesterfokon | WT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo">WT</div>
+            <div class="logo-text">Webek készítése mesterfokon</div>
+        </div>
+        <nav>
+            <button class="nav-btn active" onclick="changeTab('html')">HTML</button>
+            <button class="nav-btn" onclick="changeTab('css')">CSS</button>
+            <button class="nav-btn" onclick="changeTab('js')">JavaScript</button>
+            <button class="nav-btn video-btn">Videók <span class="badge">Hamarosan</span></button>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn-login">Bejelentkezés</button>
+            <button class="btn-register">Regisztráció</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="sidebar-left">
+            <h3>TARTALOMJEGYZÉK</h3>
+            <div id="lecture-menu">
+                </div>
+        </aside>
+
+        <main class="content-center">
+            <article id="lecture-text">
+                </article>
+
+            <div class="code-sandbox">
+                <h3>Kódolj itt élőben!</h3>
+                <textarea id="code-input" placeholder="Írd ide a HTML kódodat..."></textarea>
+                <button onclick="runCode()" class="run-btn">Kód futtatása ⚡</button>
+                <div class="preview-title">Eredmény:</div>
+                <iframe id="code-output"></iframe>
+            </div>
+        </main>
+
+        <aside class="sidebar-right">
+            <div class="ad-placeholder">
+                <p>Google Hirdetés Helye</p>
+                <span class="ad-info">(Sidebar hirdetési zóna)</span>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="footer-blog">
+            <h4>Friss Hírek & Tech Blog</h4>
+            <div class="blog-box">
+                <p><strong>[EZT TE ÍROD MAJD MEG]</strong></p>
+                <p class="footer-note">Ide bármikor beírhatsz egy friss gondolatot vagy hírt kézzel.</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 WT - Web Teach. Minden jog fenntartva.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
