@@ -9,14 +9,15 @@
 <body>
 
     <header>
-        <div class="logo-container">
+        <div class="logo-container" onclick="showMainPage()" style="cursor: pointer;">
             <div class="logo">WT</div>
             <div class="logo-text">Webek készítése mesterfokon</div>
         </div>
         <nav>
-            <button class="nav-btn active" onclick="changeTab('html')">HTML</button>
-            <button class="nav-btn" onclick="changeTab('css')">CSS</button>
-            <button class="nav-btn" onclick="changeTab('js')">JavaScript</button>
+            <button class="nav-btn" id="nav-main" onclick="showMainPage()">Főoldal</button>
+            <button class="nav-btn" id="nav-html" onclick="changeTab('html')">HTML</button>
+            <button class="nav-btn" id="nav-css" onclick="changeTab('css')">CSS</button>
+            <button class="nav-btn" id="nav-js" onclick="changeTab('js')">JavaScript</button>
             <button class="nav-btn video-btn">Videók <span class="badge">Hamarosan</span></button>
         </nav>
         <div class="auth-buttons">
@@ -25,12 +26,42 @@
         </div>
     </header>
 
-    <div class="main-container">
+    <div id="main-page" class="page-section">
+        <section class="hero">
+            <h1>Tanulj meg weboldalakat készíteni az alapoktól a mesterfokig!</h1>
+            <p>Nincs dükbölés, nincs száraz tankönyv szag. Csak tiszta gyakorlat, érthető nyelven.</p>
+        </section>
+
+        <section class="course-cards-container">
+            <h2>Milyen technológiákat tanulhatsz meg nálunk?</h2>
+            <div class="cards-grid">
+                <div class="card card-html" onclick="changeTab('html')">
+                    <div class="card-icon">&lt;/&gt;</div>
+                    <h3>HTML5 Alapozó</h3>
+                    <p>Megtanulod felépíteni egy weboldal csontvázát. Címsorok, gombok, képek és szerkezetek helyes használata.</p>
+                    <span class="card-link">Irány a leckék →</span>
+                </div>
+                <div class="card card-css" onclick="changeTab('css')">
+                    <div class="card-icon">#</div>
+                    <h3>CSS3 Dizájn</h3>
+                    <p>Itt adjuk rá a ruhát a csontvázra. Színek, hátterek, modern elrendezések, animációk és a sötét mód titkai.</p>
+                    <span class="card-link">Irány a leckék →</span>
+                </div>
+                <div class="card card-js" onclick="changeTab('js')">
+                    <div class="card-icon">{ }</div>
+                    <h3>JavaScript Programozás</h3>
+                    <p>A weboldalad agya. Kattintások kezelése, logikai műveletek, és interaktív funkciók építése élőben.</p>
+                    <span class="card-link">Irány a leckék →</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="learning-page" class="page-section main-container" style="display: none;">
         
         <aside class="sidebar-left">
             <h3>TARTALOMJEGYZÉK</h3>
-            <div id="lecture-menu">
-                </div>
+            <div id="lecture-menu"></div>
         </aside>
 
         <main class="content-center">
@@ -38,8 +69,11 @@
                 </article>
 
             <div class="code-sandbox">
-                <h3>Kódolj itt élőben!</h3>
-                <textarea id="code-input" placeholder="Írd ide a HTML kódodat..."></textarea>
+                <div class="sandbox-header">
+                    <h3>Próbáld ki élőben! 👇</h3>
+                    <p>Módosítsd a kódot és nézd meg, mi történik az Eredmény dobozban.</p>
+                </div>
+                <textarea id="code-input" placeholder="Írd ide a kódodat..."></textarea>
                 <button onclick="runCode()" class="run-btn">Kód futtatása ⚡</button>
                 <div class="preview-title">Eredmény:</div>
                 <iframe id="code-output"></iframe>
@@ -47,9 +81,23 @@
         </main>
 
         <aside class="sidebar-right">
-            <div class="ad-placeholder">
-                <p>Google Hirdetés Helye</p>
-                <span class="ad-info">(Sidebar hirdetési zóna)</span>
+            <div class="ad-container">
+                <div class="ad-banner-vertical">
+                    <span class="ad-tag">HIRDETÉS</span>
+                    <div class="ad-mock-content">
+                        <p class="ad-title">Olcsó Tárhely Weboldalaknak</p>
+                        <p class="ad-desc">Indítsd el a vállalkozásod még ma 990 Ft/hó áron!</p>
+                        <button class="ad-button">Érdekel</button>
+                    </div>
+                </div>
+                <div class="ad-banner-vertical">
+                    <span class="ad-tag">HIRDETÉS</span>
+                    <div class="ad-mock-content">
+                        <p class="ad-title">Prémium Laptopok Fejlesztőknek</p>
+                        <p class="ad-desc">0% THM-re, kifejezetten programozáshoz tervezve.</p>
+                        <button class="ad-button">Megnézem</button>
+                    </div>
+                </div>
             </div>
         </aside>
 
@@ -57,10 +105,10 @@
 
     <footer>
         <div class="footer-blog">
-            <h4>Friss Hírek & Tech Blog</h4>
+            <h4>Friss Hírek & Tech Blog tőlem</h4>
             <div class="blog-box">
                 <p><strong>[EZT TE ÍROD MAJD MEG]</strong></p>
-                <p class="footer-note">Ide bármikor beírhatsz egy friss gondolatot vagy hírt kézzel.</p>
+                <p class="footer-note">Tipp: Itt oszthatsz meg híreket arról, hogy épp milyen új leckét fejlesztel az oldalra.</p>
             </div>
         </div>
         <p class="copyright">&copy; 2026 WT - Web Teach. Minden jog fenntartva.</p>
