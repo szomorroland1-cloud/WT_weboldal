@@ -1,109 +1,50 @@
-// A TELJESEN ÚJRAKÓDOLT OKTATÓANYAG ADATBÁZIS (20 WEB LECKE + MINECRAFT)
+// 20 WEB LECKE + 5-5-5 MINECRAFT TARTALOM ADATBÁZIS
 const DATA = {
     html: [
-        // 1-5. LECKE: AZ ALAPOK ÉS A STRUKTÚRA
         { id: 1, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "1. Mi az a HTML5?", text: "<h1>Mi az a HTML5?</h1><p>A HTML a weboldalak csontváza. Minden, amit a neten látsz, HTML tagek közé van zárva.</p>", defaultCode: "<h1>Szia! Ez az első HTML kódom!</h1>" },
         { id: 2, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "2. Bekezdések és Szövegek", text: "<h1>Bekezdések kezelése</h1><p>A sima szövegeket mindig a <code>&lt;p&gt;</code> tag-ek közé írjuk.</p>", defaultCode: "<p>Ez egy sima szöveges bekezdés.</p>" },
-        { id: 3, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "3. Címsorok hierarchiája", text: "<h1>Címsorok (h1-h6)</h1><p>A keresőoptimalizálás miatt fontos, hogy a főcím <code>&lt;h1&gt;</code>, az alcímek <code>&lt;h2&gt;</code> legyenek.</p>", defaultCode: "<h1>Főcím</h1>\n<h2>Alcím</h2>" },
+        { id: 3, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "3. Címsorok hierarchiája", text: "<h1>Címsorok (h1-h6)</h1><p>A főcím <code>&lt;h1&gt;</code>, az alcímek <code>&lt;h2&gt;</code> legyenek.</p>", defaultCode: "<h1>Főcím</h1>\n<h2>Alcím</h2>" },
         { id: 4, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "4. Kattintható Linkek", text: "<h1>Hivatkozások (Links)</h1><p>A linkeket az <code>&lt;a href='URL'&gt;</code> tag segítségével hozzuk létre.</p>", defaultCode: "<a href='https://google.com' target='_blank'>Irány a Google!</a>" },
         { id: 5, level: "1. SZAKASZ: WEBFEJLESZTÉS ALAPJAI", title: "5. Képek beágyazása", text: "<h1>Képek elhelyezése</h1><p>Az <code>&lt;img&gt;</code> tagnek nincs záró párja, csak egy <code>src</code> attribútuma.</p>", defaultCode: "<img src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200' alt='Kód'>" },
-
-        // 6-10. LECKE: LISTÁK, KÁRTYÁK ÉS DOBOZOK
         { id: 6, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "6. Listák létrehozása", text: "<h1>Rendezett és rendezetlen listák</h1><p>Használj <code>&lt;ul&gt;</code>-t a pontozott, és <code>&lt;ol&gt;</code>-t a számozott listákhoz.</p>", defaultCode: "<ul>\n  <li>Első pont</li>\n  <li>Második pont</li>\n</ul>" },
-        { id: 7, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "7. A DIV dobozrendszer", text: "<h1>A láthatatlan doboz (div)</h1><p>A <code>&lt;div&gt;</code> tag a weboldalak legfontosabb eleme, ezzel csoportosítjuk a tartalmat, hogy később CSS-sel formázhassuk.</p>", defaultCode: "<div>\n  <h3>Dizájn csoport</h3>\n  <p>Tartalom a dobozon belül.</p>\n</div>" },
+        { id: 7, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "7. A DIV dobozrendszer", text: "<h1>A láthatatlan doboz (div)</h1><p>A <code>&lt;div&gt;</code> tag a weboldalak legfontosabb eleme, ezzel csoportosítjuk a tartalmat.</p>", defaultCode: "<div>\n  <h3>Dizájn csoport</h3>\n  <p>Tartalom a dobozon belül.</p>\n</div>" },
         { id: 8, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "8. HTML5 Szemantika", text: "<h1>Modern HTML5 elemek</h1><p>Használj <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> és <code>&lt;footer&gt;</code> tageket a tiszta kódért.</p>", defaultCode: "<main>\n  <article>Cikk tartalom</article>\n</main>" },
         { id: 9, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "9. Input mezők", text: "<h1>Adatbeviteli mezők</h1><p>Az <code>&lt;input type='text'&gt;</code> segítségével szöveget kérhetsz be a látogatótól.</p>", defaultCode: "<input type='text' placeholder='Írd ide a neved...'>" },
         { id: 10, level: "2. SZAKASZ: STRUKTURÁLÁS PROFIKÉNT", title: "10. Űrlapok (Forms)", text: "<h1>Űrlapok összeállítása</h1><p>A <code>&lt;form&gt;</code> fogja össze az inputokat és a küldés gombot.</p>", defaultCode: "<form>\n  <input type='email' placeholder='Email...'>\n  <button type='submit'>Küldés</button>\n</form>" },
-
-        // 11-15. LECKE: CSS ALAPOK ÉS OSZTÁLYOK
-        { id: 11, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "11. Mi az a CSS3?", text: "<h1>Bevezetés a CSS világába</h1><p>A CSS felelős a weboldal teljes kinézetéért. Megadhatod a színeket, méreteket és elrendezéseket.</p>", defaultCode: "<p style='color: cyan;'>Ez egy közvetlenül színezett szöveg.</p>" },
+        { id: 11, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "11. Mi az a CSS3?", text: "<h1>Bevezetés a CSS világába</h1><p>A CSS felelős a weboldal teljes kinézetéért. Megadhatod a színeket, méreteket.</p>", defaultCode: "<p style='color: cyan;'>Ez egy közvetlenül színezett szöveg.</p>" },
         { id: 12, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "12. CSS Osztályok (Classes)", text: "<h1>Tiszta CSS osztályokkal</h1><p>A HTML-ben megadsz egy <code>class='nev'</code>-et, a CSS-ben pedig egy ponttal (<code>.nev</code>) hivatkozol rá.</p>", defaultCode: "<style>\n  .piros-szoveg { color: red; font-weight: bold; }\n</style>\n<p class='piros-szoveg'>Ez már osztály alapú stílus!</p>" },
         { id: 13, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "13. Betűtípusok és Méretek", text: "<h1>Tipográfia</h1><p>A <code>font-size</code> és a <code>font-family</code> segítségével teljesen egyedi szövegképet alkothatsz.</p>", defaultCode: "<p style='font-size: 24px; font-family: monospace;'>Monospace nagy betűk.</p>" },
         { id: 14, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "14. Szegélyek (Borders)", text: "<h1>Keretek és szegélyek</h1><p>A <code>border</code> tulajdonsággal vastagságot, stílust és színt adhatsz a dobozaid szélének.</p>", defaultCode: "<div style='border: 2px solid #45f3ff; padding: 10px;'>Keretes doboz</div>" },
         { id: 15, level: "3. SZAKASZ: STÍLUS ÉS CSS RECEPT", title: "15. Sarkok lekerekítése", text: "<h1>Lekerekített modern formák</h1><p>A modern webes dizájn alapja a <code>border-radius</code>, amivel eltüntetheted a hegyes sarkokat.</p>", defaultCode: "<button style='border-radius: 8px; padding: 10px 20px;'>Kerekített Gomb</button>" },
-
-        // 16-20. LECKE: PRÉMIUM ELRENDEZÉSEK ÉS HÁTTEREK
-        { id: 16, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "16. Belső térköz (Padding)", text: "<h1>Padding használata</h1><p>A padding a dobozon belüli üres teret növeli meg, hogy a szöveg ne ragadjon rá a szélekre.</p>", defaultCode: "<div style='background: #222; padding: 30px;'>Kényelmes, szellős doboz.</div>" },
+        { id: 16, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "16. Belső térköz (Padding)", text: "<h1>Padding használata</h1><p>A padding a dobozon belüli üres teret növeli meg, hogy a szöveg ne ragadjon rá a szélekre.</p>", defaultCode: "<div style='background: #222; padding: 30px;'>Kényelmes doboz.</div>" },
         { id: 17, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "17. Külső margó (Margin)", text: "<h1>Margin használata</h1><p>A margin a dobozon kívüli teret tolja el, ezzel tudsz két külön elemet eltávolítani egymástól.</p>", defaultCode: "<div style='margin-bottom: 50px; background: red;'>Felső</div>\n<div style='background: blue;'>Alsó</div>" },
         { id: 18, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "18. Színátmenetes hátterek", text: "<h1>Linear-gradient háttérbeállítás</h1><p>A profi sötét oldalak alapja a CSS <code>linear-gradient</code>, amivel gyönyörű színátmeneteket készíthetsz.</p>", defaultCode: "<div style='background: linear-gradient(135deg, #111, #0072ff); padding: 50px; color: white;'>Átmenetes háttér</div>" },
-        { id: 19, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "19. CSS Flexbox alapok", text: "<h1> display: flex;</h1><p>A flexbox segítségével az elemeket azonnal és tökéletesen egymás mellé tudod rendezni szoftveres szinten.</p>", defaultCode: "<div style='display: flex; gap: 20px;'>\n  <div style='background:gray; padding:10px;'>1</div>\n  <div style='background:gray; padding:10px;'>2</div>\n</div>" },
-        { id: 20, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "20. Teljes reszponzív kártya", text: "<h1>A 20. Vizsgafeladat</h1><p>Gratulálunk! Elérted az utolsó leckét. Itt egy komplett, modern és profi termékkártyát láthatsz, ami az eddig tanult összes HTML és CSS elemet tartalmazza.</p>", defaultCode: "<div style='background: #151a22; border: 1px solid #45f3ff; padding: 25px; border-radius: 12px; width: 250px; text-align: center; color: white;'>\n  <h3 style='margin: 0 0 10px 0;'>WebTeach Pro</h3>\n  <p style='font-size: 14px; color: #8f9aa7;'>Sikeresen elvégezted a 20 leckés HTML & CSS fejlesztő kurzust!</p>\n  <button style='background: #45f3ff; border: none; padding: 10px 20px; font-weight: bold; border-radius: 6px; cursor: pointer;'>Tanúsítvány</button>\n</div>" }
+        { id: 19, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "19. CSS Flexbox alapok", text: "<h1>display: flex;</h1><p>A flexbox segítségével az elemeket azonnal egymás mellé tudod rendezni szoftveres szinten.</p>", defaultCode: "<div style='display: flex; gap: 20px;'>\n  <div style='background:gray; padding:10px;'>1</div>\n  <div style='background:gray; padding:10px;'>2</div>\n</div>" },
+        { id: 20, level: "4. SZAKASZ: PRÉMIUM DIZÁJN", title: "20. Teljes reszponzív kártya", text: "<h1>A 20. Vizsgafeladat</h1><p>Gratulálunk! Elérted az utolsó leckét. Itt egy komplett, modern és profi termékkártyát láthatsz.</p>", defaultCode: "<div style='background: #151a22; border: 1px solid #45f3ff; padding: 25px; border-radius: 12px; width: 250px; text-align: center; color: white;'><h3>WebTeach Pro</h3><button style='background: #45f3ff; border: none; padding: 10px 20px; font-weight: bold; border-radius: 6px; cursor: pointer;'>Tanúsítvány</button></div>" }
     ],
-    css: [
-        // 5 DB PROFESSZIONÁLIS MINECRAFT PLUGIN CSATORNA
-        { 
-            id: 1, 
-            level: "🔥 MINECRAFT PLUGINOK", 
-            title: "1. PLUGIN: Ide Írd a Plugin Nevét", 
-            text: "<h1>Plugin Név Helye</h1><p>Ide írhatod le részletesen, hogy mit tud ez a profi plugin, hogyan kell beállítani a szerveren, és miért hasznos a játékosoknak.</p><p>A lenti gombra kattintva a diákjaid azonnal le tudják tölteni vagy meg tudják nézni a hivatalos oldalt.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése / Letöltése 🚀</a>", 
-            defaultCode: "\n# Config.yml minta\nsettings:\n  enabled: true\n  prefix: '&6[WebTeachPlugin] '" 
-        },
-        { 
-            id: 2, 
-            level: "🔥 MINECRAFT PLUGINOK", 
-            title: "2. PLUGIN: Második Plugin", 
-            text: "<h1>Második Plugin Leírása</h1><p>Írd ide a második plugin bemutatását.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
-            defaultCode: "# Második plugin beállítások" 
-        },
-        { 
-            id: 3, 
-            level: "🔥 MINECRAFT PLUGINOK", 
-            title: "3. PLUGIN: Harmadik Plugin", 
-            text: "<h1>Harmadik Plugin Leírása</h1><p>Ide jön a harmadik plugin ismertetője.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
-            defaultCode: "# Harmadik plugin beállítások" 
-        },
-        { 
-            id: 4, 
-            level: "🔥 MINECRAFT PLUGINOK", 
-            title: "4. PLUGIN: Negyedik Plugin", 
-            text: "<h1>Negyedik Plugin Leírása</h1><p>Ide jön a negyedik plugin leírása.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
-            defaultCode: "# Negyedik plugin beállítások" 
-        },
-        { 
-            id: 5, 
-            level: "🔥 MINECRAFT PLUGINOK", 
-            title: "5. PLUGIN: Ötödik Plugin", 
-            text: "<h1>Ötödik Plugin Leírása</h1><p>Ide jön az ötödik profi szerver plugin leírása.</p><br><a href='IDE_MÁSOLD_BE_A_PLUGIN_LINKJÉT' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Megtekintése 🚀</a>", 
-            defaultCode: "# Ötödik plugin beállítások" 
-        }
+    plugins: [
+        // 5 DB PLUGIN LEÍRÁS
+        { id: 1, level: "⚙️ SZERVER PLUGINOK", title: "1. PLUGIN: Első Plugin", text: "<h1>Ide írd az 1. Plugin Nevét</h1><p>Ide jön az első pluginod kőkemény és részletes bemutató leírása, amit te fogsz majd kitölteni a fájlban.</p><br><a href='IDE_A_LINKET' target='_blank' class='mc-download-btn' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Letöltése / Megtekintése 🚀</a>" },
+        { id: 2, level: "⚙️ SZERVER PLUGINOK", title: "2. PLUGIN: Második Plugin", text: "<h1>Ide írd a 2. Plugin Nevét</h1><p>Ide jön a második pluginod részletes leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Letöltése 🚀</a>" },
+        { id: 3, level: "⚙️ SZERVER PLUGINOK", title: "3. PLUGIN: Harmadik Plugin", text: "<h1>Ide írd a 3. Plugin Nevét</h1><p>Ide jön a harmadik pluginod részletes leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Letöltése 🚀</a>" },
+        { id: 4, level: "⚙️ SZERVER PLUGINOK", title: "4. PLUGIN: Negyedik Plugin", text: "<h1>Ide írd a 4. Plugin Nevét</h1><p>Ide jön a negyedik pluginod részletes leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Letöltése 🚀</a>" },
+        { id: 5, level: "⚙️ SZERVER PLUGINOK", title: "5. PLUGIN: Ötödik Plugin", text: "<h1>Ide írd az 5. Plugin Nevét</h1><p>Ide jön az ötödik pluginod részletes leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #ff9900; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Plugin Letöltése 🚀</a>" }
     ],
-    js: [
-        // 5 DB PROFESSZIONÁLIS MINECRAFT MOD CSATORNA
-        { 
-            id: 1, 
-            level: "🛠️ MINECRAFT MODOK", 
-            title: "1. MOD: Ide Írd a Mod Nevét", 
-            text: "<h1>Mod Név Helye</h1><p>Ide írhatod le, hogy ez a Forge / Fabric mod milyen új blokkokat, textúrákat vagy mechanikákat ad hozzá a játékhoz.</p><p>A diákok imádni fogják a közvetlen linket az elérhetőségéhez!</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése / Letöltése 🛠️</a>", 
-            defaultCode: "/* Ide akár Java kódrészletet vagy telepítési útmutatót is írhatsz */\nForgeMod.register();" 
-        },
-        { 
-            id: 2, 
-            level: "🛠️ MINECRAFT MODOK", 
-            title: "2. MOD: Második Mod", 
-            text: "<h1>Második Mod Leírása</h1><p>Írd ide a második nagy Minecraft mod bemutatását.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
-            defaultCode: "// Második mod info" 
-        },
-        { 
-            id: 3, 
-            level: "🛠️ MINECRAFT MODOK", 
-            title: "3. MOD: Harmadik Mod", 
-            text: "<h1>Harmadik Mod Leírása</h1><p>Ide jön a harmadik mod részletes bemutatása.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
-            defaultCode: "// Harmadik mod info" 
-        },
-        { 
-            id: 4, 
-            level: "🛠️ MINECRAFT MODOK", 
-            title: "4. MOD: Negyedik Mod", 
-            text: "<h1>Negyedik Mod Leírása</h1><p>Ide jön a negyedik izgalmas mod ismertetője.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
-            defaultCode: "// Negyedik mod info" 
-        },
-        { 
-            id: 5, 
-            level: "🛠️ MINECRAFT MODOK", 
-            title: "5. MOD: Ötödik Mod", 
-            text: "<h1>Ötödik Mod Leírása</h1><p>Ide jön az ötödik modifikáció leírása és külső hivatkozása.</p><br><a href='IDE_MÁSOLD_BE_A_MOD_LINKJÉT' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Megtekintése 🛠️</a>", 
-            defaultCode: "// Ötödik mod info" 
-        }
+    mods: [
+        // 5 DB MOD LEÍRÁS
+        { id: 1, level: "🛠️ KLIENS & SZERVER MODOK", title: "1. MOD: Első Modifikáció", text: "<h1>Ide írd az 1. Mod Nevét</h1><p>Ide írhatod be a mod leírását, a hozzá tartozó verziókat (Forge/Fabric) és a legfontosabb infókat.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Letöltése 🛠️</a>" },
+        { id: 2, level: "🛠️ KLIENS & SZERVER MODOK", title: "2. MOD: Második Modifikáció", text: "<h1>Ide írd a 2. Mod Nevét</h1><p>Ide jön a második mod leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Letöltése 🛠️</a>" },
+        { id: 3, level: "🛠️ KLIENS & SZERVER MODOK", title: "3. MOD: Harmadik Modifikáció", text: "<h1>Ide írd a 3. Mod Nevét</h1><p>Ide jön a harmadik mod leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Letöltése 🛠️</a>" },
+        { id: 4, level: "🛠️ KLIENS & SZERVER MODOK", title: "4. MOD: Negyedik Modifikáció", text: "<h1>Ide írd a 4. Mod Nevét</h1><p>Ide jön a negyedik mod leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Letöltése 🛠️</a>" },
+        { id: 5, level: "🛠️ KLIENS & SZERVER MODOK", title: "5. MOD: Ötödik Modifikáció", text: "<h1>Ide írd az 5. Mod Nevét</h1><p>Ide jön az ötödik mod leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #00aa00; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Mod Letöltése 🛠️</a>" }
+    ],
+    textures: [
+        // 5 DB TEXTURE PACK LEÍRÁS
+        { id: 1, level: "🎨 TEXTÚRAPAKKOK (RESOURCE PACKS)", title: "1. PACK: Első Textúra", text: "<h1>Ide írd az 1. Textúrapakk Nevét</h1><p>Mutasd be ezt a grafikai csomagot! Írd le, hogy PvP pakk, realisztikus x64-es, vagy letisztult hűséges stílusú-e, és hogy kell-e hozzá OptiFine.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #45f3ff; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Textúra Letöltése 🎨</a>" },
+        { id: 2, level: "🎨 TEXTÚRAPAKKOK (RESOURCE PACKS)", title: "2. PACK: Második Textúra", text: "<h1>Ide írd a 2. Textúrapakk Nevét</h1><p>Ide jön a második textúrapakk leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #45f3ff; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Textúra Letöltése 🎨</a>" },
+        { id: 3, level: "🎨 TEXTÚRAPAKKOK (RESOURCE PACKS)", title: "3. PACK: Harmadik Textúra", text: "<h1>Ide írd a 3. Textúrapakk Nevét</h1><p>Ide jön a harmadik textúrapakk leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #45f3ff; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Textúra Letöltése 🎨</a>" },
+        { id: 4, level: "🎨 TEXTÚRAPAKKOK (RESOURCE PACKS)", title: "4. PACK: Negyedik Textúra", text: "<h1>Ide írd a 4. Textúrapakk Nevét</h1><p>Ide jön a negyedik textúrapakk leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #45f3ff; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Textúra Letöltése 🎨</a>" },
+        { id: 5, level: "🎨 TEXTÚRAPAKKOK (RESOURCE PACKS)", title: "5. PACK: Ötödik Textúra", text: "<h1>Ide írd az 5. Textúrapakk Nevét</h1><p>Ide jön az ötödik textúrapakk leírása.</p><br><a href='IDE_A_LINKET' target='_blank' style='background: #45f3ff; color: black; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block;'>Textúra Letöltése 🎨</a>" }
     ]
 };
 
@@ -121,13 +62,16 @@ function changeTab(tabName) {
     document.getElementById('main-page').style.display = 'none';
     document.getElementById('learning-page').style.display = 'flex';
     document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-    
-    // Átnevezzük a gombokat a felületen a háttérben, hogy illeszkedjenek az új menühöz
-    document.getElementById('nav-html').innerText = "HTML & CSS Kurzus";
-    document.getElementById('nav-css').innerText = "MC Plugins";
-    document.getElementById('nav-js').innerText = "MC Mods";
-    
     document.getElementById(`nav-${tabName}`).classList.add('active');
+    
+    // DINAMIKUS ELREJTÉS ÉS MEGJELENÍTÉS
+    const workspace = document.getElementById('web-workspace');
+    if (tabName === 'html') {
+        workspace.style.display = 'flex'; // HTML-nél kell a kódszerkesztő
+    } else {
+        workspace.style.display = 'none'; // Minecraft kategóriáknál eltűnik!
+    }
+    
     renderMenu();
     loadLecture(1);
 }
@@ -166,8 +110,12 @@ function loadLecture(id) {
     });
 
     document.getElementById('lecture-text').innerHTML = lecture.text;
-    document.getElementById('code-input').value = lecture.defaultCode;
-    runCode();
+    
+    // Csak akkor frissítjük a szerkesztőt, ha az aktív fül a HTML
+    if (currentTab === 'html') {
+        document.getElementById('code-input').value = lecture.defaultCode;
+        runCode();
+    }
 }
 
 function runCode() {
@@ -194,9 +142,5 @@ window.onclick = function(event) {
 }
 
 window.onload = () => {
-    // Kezdésnél átírjuk a menü gombjait az új nevekre
-    document.getElementById('nav-html').innerText = "HTML & CSS Kurzus";
-    document.getElementById('nav-css').innerText = "MC Plugins";
-    document.getElementById('nav-js').innerText = "MC Mods";
     showMainPage();
 };
