@@ -19,9 +19,10 @@
         </div>
         <div class="nav-center">
             <button id="nav-main" class="nav-btn active" onclick="showMainPage()">Főoldal</button>
-            <button id="nav-html" class="nav-btn" onclick="changeTab('html')">HTML</button>
-            <button id="nav-css" class="nav-btn" onclick="changeTab('css')">CSS</button>
-            <button id="nav-js" class="nav-btn" onclick="changeTab('js')">JavaScript</button>
+            <button id="nav-html" class="nav-btn" onclick="changeTab('html')">HTML & CSS</button>
+            <button id="nav-plugins" class="nav-btn" onclick="changeTab('plugins')">MC Plugins</button>
+            <button id="nav-mods" class="nav-btn" onclick="changeTab('mods')">MC Mods</button>
+            <button id="nav-textures" class="nav-btn" onclick="changeTab('textures')">Texture Packs</button>
         </div>
         <div class="nav-right">
             <button class="auth-btn login" onclick="openModal('login-modal')">Login</button>
@@ -31,8 +32,8 @@
 
     <div id="main-page" class="container">
         <div class="hero-section">
-            <h1>Webes készítés mesterfokon | WT</h1>
-            <p class="hero-subtitle">Ne csak a felszínt kapargasd. Tanuld meg a professzionális HTML5, CSS és JavaScript fejlesztést valódi gyakorlati példákon keresztül.</p>
+            <h1>Webes készítés és Minecraft játékmester képzés | WT</h1>
+            <p class="hero-subtitle">Tanuld meg a professzionális HTML5 & CSS fejlesztést, vagy böngéssz a legjobb, általam válogatott Minecraft pluginok, modok és textúrapakkok között!</p>
             <div class="hero-buttons">
                 <button class="cta-btn" onclick="changeTab('html')">Kezdés HTML-lel</button>
                 <a href="https://discord.gg/AHx7F9ytWe" target="_blank" class="dc-btn">Csatlakozz a Discordhoz</a>
@@ -45,13 +46,8 @@
             <h2>📢 Legutóbbi Bejelentések</h2>
             <div class="news-card">
                 <span class="news-date">2026. 06. 16.</span>
-                <h3>Elindult a hivatalos Discord szerverünk!</h3>
-                <p>Nowantól zárt fejlesztői közösségben kérhetsz segítséget, oszthetod meg a projektjeidet, és kapsz azonnali visszajelzést. Csatlakozz a fenti gombbal!</p>
-            </div>
-            <div class="news-card">
-                <span class="news-date">2026. 06. 15.</span>
-                <h3>Haladó tananyagok élesítve</h3>
-                <p>Frissítettük az oktatási rendszert. Az alapok mellett most már a mélyebb architektúrát, a CSS Flexbox elrendezést és a professzionális JavaScript eseménykezelőket is elsajátíthatod.</p>
+                <h3>Elindult a Minecraft és a Textúra részleg!</h3>
+                <p>Teljesen átalakítottuk az oldalt. Mostantól a profi webfejlesztés mellett megtalálod a legjobb Minecraft kiegészítőket, pluginokat és textúrapakkokat is leírásokkal és letöltési linkekkel.</p>
             </div>
         </div>
     </div>
@@ -64,7 +60,7 @@
             <div id="lecture-text" class="lecture-markdown">
                 </div>
             
-            <div class="workspace">
+            <div id="web-workspace" class="workspace">
                 <div class="code-editor">
                     <div class="panel-header">Saját Kód Szerkesztő</div>
                     <textarea id="code-input" spellcheck="false" oninput="runCode()"></textarea>
