@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webek készítése mesterfokon | WT</title>
     <link rel="stylesheet" href="style.css">
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <!-- FELSŐ MENÜSÁV -->
     <header>
         <div class="logo-container" onclick="showMainPage()" style="cursor: pointer;">
             <div class="logo">WT</div>
@@ -28,6 +27,7 @@
         </div>
     </header>
 
+    <!-- 1. DINAMIKUS FŐOLDAL -->
     <div id="main-page" class="page-section">
         <section class="hero">
             <h1>Tanulj meg weboldalakat készíteni az alapoktól a mesterfokig!</h1>
@@ -59,17 +59,22 @@
         </section>
     </div>
 
+    <!-- 2. TANULÓ FELÜLET -->
     <div id="learning-page" class="page-section main-container" style="display: none;">
         
+        <!-- BAL OLDALI SÁV: LECKÉK -->
         <aside class="sidebar-left">
             <h3>TARTALOMJEGYZÉK</h3>
             <div id="lecture-menu"></div>
         </aside>
 
+        <!-- KÖZÉPSŐ SÁV: OKTATÓANYAG ÉS KÓDGYAKORLÓ -->
         <main class="content-center">
             <article id="lecture-text">
-                </article>
+                <!-- Ide jön a részletes, laza leírás -->
+            </article>
 
+            <!-- BEÉPÍTETT KÓDGYAKORLÓ -->
             <div class="code-sandbox">
                 <div class="sandbox-header">
                     <h3>Próbáld ki élőben! 👇</h3>
@@ -82,24 +87,19 @@
             </div>
         </main>
 
+        <!-- JOBB OLDALI SÁV: AKTUÁLIS HIRDETÉSI ZÓNA -->
         <aside class="sidebar-right">
             <div class="ad-container">
                 
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-                     data-ad-slot="YYYYYYYYYYYY"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                     (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <!-- A TE SAJÁT MONETAG HIRDETÉSI KÓDOD -->
+                <script>(function(s){s.dataset.zone='11158596',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 
             </div>
         </aside>
 
     </div>
 
+    <!-- ALSÓ SÁV (FOOTER) -->
     <footer>
         <div class="footer-blog">
             <h4>Friss Hírek & Tech Blog tőlem</h4>
