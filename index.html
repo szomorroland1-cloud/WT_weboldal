@@ -3,120 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FileVault | Premium & Free Digital Downloads</title>
     
-    <!-- MONETAG AD CODE -->
+    <title>WebTeach - Web Development Discord Community</title>
+    
+    <link rel="icon" type="image/png" href="Gemini_Generated_Image_4lii664lii664lii.png">
+    
+    <!-- Külső script integrálása -->
     <script src="https://5gvci.com/act/files/tag.min.js?z=11158750" data-cfasync="false" async></script>
-    
+
+    <!-- CSS FÁJL ÖSSZEKÖTÉSE -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- TOP NAVIGATION -->
-    <nav class="navbar">
-        <div class="nav-left" onclick="switchMainTab('free')" style="cursor: pointer;">
-            <span class="logo-bracket">📦</span>
-            <span class="logo-text" style="color: #45f3ff;">FileVault</span>
+    <header>
+        <div class="nav-logo-container">
+            <img src="Gemini_Generated_Image_4lii664lii664lii.png" alt="WebTeach Logo" class="nav-logo-img">
+            <div class="logo-nav">
+                <span class="logo-web">Web</span><span class="logo-teach">Teach</span>
+            </div>
         </div>
-        <div class="nav-center">
-            <button id="tab-free" class="nav-btn active" onclick="switchMainTab('free')">🆓 Free Downloads</button>
-            <button id="tab-premium" class="nav-btn" onclick="switchMainTab('premium')">💎 Premium Store</button>
-        </div>
-        <div class="nav-right">
-            <span style="color: #8f9aa7; font-size: 13px;">Status: <span style="color: #55ff55;">Secure Cloud</span></span>
-        </div>
-    </nav>
+        <nav class="nav-tabs">
+            <button id="btn-tab-home" class="tab-btn active" onclick="switchTab('home-page')">Home</button>
+            <button id="btn-tab-play" class="tab-btn" onclick="switchTab('playground-page')">Code Playground</button>
+        </nav>
+    </header>
 
-    <!-- MAIN LAYOUT -->
-    <div class="learning-container">
-        
-        <!-- LEFT SIDEBAR SUB-CATEGORIES -->
-        <aside class="sidebar">
-            <div class="level-title">📁 CATEGORIES</div>
-            <a class="lecture-link active" onclick="switchSubCategory('mc-servers')" id="cat-mc-servers">Minecraft Servers & Plugins</a>
-            <a class="lecture-link" onclick="switchSubCategory('mc-stuff')" id="cat-mc-stuff">Minecraft Stuff</a>
-            <a class="lecture-link" onclick="switchSubCategory('random')" id="cat-random">Random Stuff</a>
-            <a class="lecture-link" onclick="switchSubCategory('clients')" id="cat-clients">Cheats & Normal Clients</a>
-        </aside>
-        
-        <!-- CONTENT AREA -->
-        <main class="content-area">
-            <div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
-                <h2 id="page-title" style="color: white; margin-bottom: 5px;">Free Downloads</h2>
-                <p id="page-desc" style="color: #8f9aa7; margin-bottom: 25px; font-size: 14px;">Select a file below to start your high-speed download.</p>
+    <main id="home-page" class="page-content active">
+        <div class="container">
+            <img src="Gemini_Generated_Image_4lii664lii664lii.png" alt="WebTeach Big Logo" class="main-logo-img">
+            
+            <h1 class="main-title">Master Web Development</h1>
+            <p class="tagline">The ultimate international Discord community for frontend and backend web developers.</p>
+
+            <div class="button-group">
+                <a href="https://discord.gg/AHx7F9ytWe" class="btn btn-discord" target="_blank">
+                    Join Discord Server
+                </a>
+                <button class="btn btn-to-playground" onclick="directToPlayground()">
+                    Try Code Playground 🚀
+                </button>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <div class="feature-title">Beginner Friendly</div>
+                    <div class="feature-desc">No matter your level, you can ask questions freely without judgment.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🙋</div>
+                    <div class="feature-title">Dedicated Help</div>
+                    <div class="feature-desc">Structured forum channels to submit bugs and get code reviews.</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-title">Build in Public</div>
+                    <div class="feature-desc">Share your GitHub repositories, live sites, and get instant feedback.</div>
+                </div>
+            </div>
+
+            <div class="dev-section">
+                <h3>🛠️ Core Web Technologies</h3>
+                <p style="color: var(--text-muted);">A quick overview of the pillars of web development you will master in our community.</p>
                 
-                <!-- FILE GRID -->
-                <div id="file-grid" style="display: flex; flex-direction: column; gap: 15px;">
-                    <!-- JS will load files here -->
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- REHETETT ADMIN PANEL (ONLY FOR YOU) -->
-    <div class="admin-panel" style="background: #0f141c; border-top: 2px solid #ff9900; padding: 30px; margin-top: 50px;">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h3 style="color: #ff9900; margin-top: 0;">🔒 Owner Control Panel (File Uploader)</h3>
-            <p style="color: #666; font-size: 12px;">This panel is only visible to you. Add new files to the system instantly.</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
-                <input type="text" id="upload-name" placeholder="File Name (e.g., Op Hacked Client v2)" style="padding: 10px; background: #1a222d; border: 1px solid #333; color: white; border-radius: 4px;">
-                <input type="text" id="upload-desc" placeholder="Short Description" style="padding: 10px; background: #1a222d; border: 1px solid #333; color: white; border-radius: 4px;">
-                <input type="text" id="upload-link" placeholder="Download Link / File URL" style="padding: 10px; background: #1a222d; border: 1px solid #333; color: white; border-radius: 4px;">
-                
-                <select id="upload-type" onchange="togglePriceInput()" style="padding: 10px; background: #1a222d; border: 1px solid #333; color: white; border-radius: 4px;">
-                    <option value="free">Free Download</option>
-                    <option value="premium">Premium (Paid)</option>
-                </select>
-
-                <select id="upload-cat" style="padding: 10px; background: #1a222d; border: 1px solid #333; color: white; border-radius: 4px;">
-                    <option value="mc-servers">Minecraft Servers & Plugins</option>
-                    <option value="mc-stuff">Minecraft Stuff</option>
-                    <option value="random">Random Stuff</option>
-                    <option value="clients">Cheats & Normal Clients</option>
-                </select>
-
-                <input type="number" id="upload-price" placeholder="Price in USD ($)" value="0" disabled style="padding: 10px; background: #1a222d; border: 1px solid #333; color: #555; border-radius: 4px;">
-            </div>
-            <button onclick="handleAdminUpload()" style="margin-top: 15px; background: #ff9900; color: black; border: none; padding: 10px 25px; font-weight: bold; border-radius: 4px; cursor: pointer;">🚀 Upload File to Database</button>
-        </div>
-    </div>
-
-    <!-- CREDIT CARD PAYMENT MODAL POPUP -->
-    <div id="payment-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 9999;">
-        <div style="background: #151a22; border: 1px solid #333; padding: 30px; border-radius: 12px; width: 100%; max-width: 420px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h3 style="color: white; margin: 0;">💳 Secure Checkout</h3>
-                <button onclick="closePaymentModal()" style="background: none; border: none; color: #ff5555; font-size: 20px; cursor: pointer;">✕</button>
-            </div>
-            
-            <p style="color: #8f9aa7; font-size: 14px; margin-bottom: 20px;">You are purchasing: <b id="modal-item-name" style="color: #ff9900;"></b><br>Total Price: <b id="modal-item-price" style="color: #55ff55;"></b></p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <div>
-                    <label style="color: #aaa; font-size: 12px; display: block; margin-bottom: 5px;">CARDHOLDER NAME</label>
-                    <input type="text" placeholder="John Doe" style="width: 100%; padding: 10px; background: #0f141c; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box;">
-                </div>
-                <div>
-                    <label style="color: #aaa; font-size: 12px; display: block; margin-bottom: 5px;">CARD NUMBER</label>
-                    <input type="text" placeholder="4242 •••• •••• 4242" style="width: 100%; padding: 10px; background: #0f141c; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box;">
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <div>
-                        <label style="color: #aaa; font-size: 12px; display: block; margin-bottom: 5px;">EXPIRY DATE</label>
-                        <input type="text" placeholder="MM / YY" style="width: 100%; padding: 10px; background: #0f141c; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box;">
+                <div class="dev-grid">
+                    <div class="dev-card html">
+                        <h4>HTML5 <span>Structure</span></h4>
+                        <div class="dev-code">&lt;div class="box"&gt;
+  &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/div&gt;</div>
                     </div>
-                    <div>
-                        <label style="color: #aaa; font-size: 12px; display: block; margin-bottom: 5px;">CVC CODE</label>
-                        <input type="text" placeholder="123" style="width: 100%; padding: 10px; background: #0f141c; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box;">
+                    <div class="dev-card css">
+                        <h4>CSS3 <span>Design</span></h4>
+                        <div class="dev-code" style="color: #bae6fd;">.box {
+  background: #10b981;
+  color: white;
+  padding: 20px;
+}</div>
+                    </div>
+                    <div class="dev-card js">
+                        <h4>JavaScript <span>Logic</span></h4>
+                        <div class="dev-code" style="color: #fef08a;">document.querySelector('.box')
+  .addEventListener('click', () => {
+    alert('Coded via WebTeach!');
+});</div>
                     </div>
                 </div>
-                <button onclick="processDemoPayment()" style="background: #55ff55; color: black; border: none; padding: 12px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 10px; font-size: 15px;">Pay & Download Instantly</button>
             </div>
-            <p style="font-size: 10px; color: #555; text-align: center; margin-top: 15px;">🔒 256-bit SSL Encrypted Connection. Direct Bank Transfer enabled.</p>
-        </div>
-    </div>
 
+        </div>
+    </main>
+
+    <main id="playground-page" class="page-content">
+        <div class="playground-container">
+            <h2 style="text-align: left;">Live Code Sandbox</h2>
+            <p style="color: var(--text-muted); text-align: left; margin-bottom: 10px;">Write HTML and CSS code below, then hit run to see the preview instantly.</p>
+            
+            <div class="workspace">
+                <div class="editor-zone">
+                    <div class="zone-header">HTML / CSS Input</div>
+                    <textarea id="code-editor" autocomplete="off" spellcheck="false"><div style="background: #1e293b; color: white; padding: 30px; text-align: center; border-radius: 12px; font-family: sans-serif; border: 2px solid #10b981;">
+  <h1 style="color: #10b981; margin-bottom: 10px;">&lt;WebTeach/&gt;</h1>
+  <p style="color: #94a3b8;">Your live preview workspace is fully operational.</p>
+</div></textarea>
+                </div>
+
+                <div class="preview-zone">
+                    <div class="zone-header">Live Output View</div>
+                    <iframe id="live-preview"></iframe>
+                </div>
+            </div>
+            
+            <button class="btn-run" onclick="runCode()">Run Code 🚀</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        &copy; 2026 WebTeach Community. All rights reserved.
+    </footer>
+
+    <!-- JAVASCRIPT FÁJL ÖSSZEKÖTÉSE -->
     <script src="script.js"></script>
 </body>
 </html>
